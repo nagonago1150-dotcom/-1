@@ -16,12 +16,12 @@ class KalcalaChatbot {
     getRedirectUrl() {
         const path = window.location.pathname;
         const redirectUrls = {
-            '/1': 'https://shop.sain-clarte.com/kalcala/15_nensyo2_mu_ka.lp_ishi/sp.html',
-            '/2': 'https://shop.sain-clarte.com/kalcala/15_nensyo3_mu_ka.lp_ishi/sp.html'
+            '/1': 'https://sf-system.jp/link.php?i=pi41sh02hwpy&m=mi41ruivpeep',
+            '/2': 'https://sf-system.jp/link.php?i=pi41sh02hwpy&m=mi4e9lzv5vxl'
         };
 
         // パスに対応するURLがあれば返す、なければデフォルトURL
-        return redirectUrls[path] || 'https://shop.sain-clarte.com/kalcala/15_nensyo2_mu_ka.lp_ishi/sp.html';
+        return redirectUrls[path] || 'https://sf-system.jp/link.php?i=pi41sh02hwpy&m=mi41ruivpeep';
     }
     
     init() {
