@@ -8,8 +8,20 @@ class KalcalaChatbot {
         
         this.currentState = 'initial';
         this.selectedConcern = null;
-        
+
         this.init();
+    }
+
+    // パス別リダイレクトURL設定
+    getRedirectUrl() {
+        const path = window.location.pathname;
+        const redirectUrls = {
+            '/1': 'https://shop.sain-clarte.com/kalcala/15_nensyo2_mu_ka.lp_ishi/sp.html',
+            '/2': 'https://shop.sain-clarte.com/kalcala/15_nensyo3_mu_ka.lp_ishi/sp.html'
+        };
+
+        // パスに対応するURLがあれば返す、なければデフォルトURL
+        return redirectUrls[path] || 'https://shop.sain-clarte.com/kalcala/15_nensyo2_mu_ka.lp_ishi/sp.html';
     }
     
     init() {
@@ -232,7 +244,7 @@ class KalcalaChatbot {
                 const linkContent = document.createElement('div');
                 linkContent.className = 'message-content';
                 const linkButton = document.createElement('a');
-                linkButton.href = 'https://shop.sain-clarte.com/kalcala/15_nensyo2_mu_ka.lp_ishi/sp.html';
+                linkButton.href = this.getRedirectUrl();
                 linkButton.target = '_blank';
                 linkButton.rel = 'noopener noreferrer';
                 linkButton.style.cssText = `
@@ -274,7 +286,7 @@ class KalcalaChatbot {
     }
     
     redirectToPurchase() {
-        const lpUrl = 'https://shop.sain-clarte.com/kalcala/15_nensyo2_mu_ka.lp_ishi/sp.html';
+        const lpUrl = this.getRedirectUrl();
         
         // ポップアップブロッカー対策として複数の方法を試行
         try {
